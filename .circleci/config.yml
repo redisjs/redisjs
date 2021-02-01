@@ -1,0 +1,15 @@
+version: 2.1
+defaults: &defaults
+  docker:
+    - image: circleci/node:latest
+
+jobs:
+  setup:
+    <<: *defaults
+    steps:
+      - checkout
+
+workflows:
+  vefiry_pr:
+    jobs:
+      - setup
